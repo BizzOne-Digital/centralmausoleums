@@ -7,7 +7,7 @@ const services = [
     subtitle: 'From Vision to Enduring Stone',
     desc: 'Full-service design, engineering, and construction of single, double, family, and estate mausoleums. From initial consultation to final installation, we handle every detail with precision and care.',
     steps: ['Site evaluation & consultation', 'Custom architectural design', 'Premium granite fabrication', 'Professional installation', 'Final inspection & delivery'],
-    img: '/product4.png',
+    img: '/Estates/Tribute_WalkIn_Gallery.jpg',
     svg: <svg width="44" height="44" viewBox="0 0 44 44" fill="none"><path d="M22 4L4 14V40H40V14L22 4Z" stroke="#b8922a" strokeWidth="1.2" fill="none"/><rect x="14" y="26" width="16" height="14" stroke="#b8922a" strokeWidth="1" fill="none"/><path d="M14 26C14 19 30 19 30 26" stroke="#b8922a" strokeWidth="1" fill="none"/><circle cx="22" cy="4" r="2.5" fill="#b8922a"/><rect x="6" y="14" width="32" height="8" stroke="rgba(184,146,42,0.4)" strokeWidth="0.75" fill="none"/></svg>,
   },
   {
@@ -15,7 +15,7 @@ const services = [
     subtitle: 'Elegant Spaces for Cremated Remains',
     desc: 'Custom columbarium structures for families, religious institutions, and cemetery organizations. Available in family, community, and modular configurations with beautiful granite craftsmanship.',
     steps: ['Niche capacity planning', 'Architectural design approval', 'Granite sourcing & cutting', 'On-site assembly', 'Bronze nameplate installation'],
-    img: '/whyus.png',
+    img: '/Community Columberian/SD-781_Render_Gallery.jpg',
     svg: <svg width="44" height="44" viewBox="0 0 44 44" fill="none"><rect x="4" y="8" width="36" height="32" stroke="#b8922a" strokeWidth="1.2" fill="none"/><path d="M4 8L22 2L40 8" stroke="#b8922a" strokeWidth="1" fill="none"/>{[0,1,2].map(r=>[0,1,2].map(c=>(<rect key={`${r}-${c}`} x={8+c*11} y={14+r*10} width="8" height="7" stroke="rgba(184,146,42,0.5)" strokeWidth="0.7" fill="rgba(184,146,42,0.04)"/>)))}<rect x="8" y="38" width="28" height="2" stroke="rgba(184,146,42,0.3)" strokeWidth="0.5" fill="none"/></svg>,
   },
   {
@@ -23,7 +23,7 @@ const services = [
     subtitle: 'Memorial Benches in Lasting Granite',
     desc: 'Beautifully crafted granite benches that serve as both memorial tributes and peaceful sitting places — incorporating discreet urn chambers with elegant inscription panels.',
     steps: ['Custom size & shape selection', 'Granite color selection', 'Inscription & engraving design', 'Urn chamber preparation', 'Delivery & placement'],
-    img: '/product8.png',
+    img: '/Cremation Benches/SD-032_FINAL_George_Gallery-removebg-preview.png',
     svg: <svg width="44" height="44" viewBox="0 0 44 44" fill="none"><rect x="6" y="22" width="32" height="10" stroke="#b8922a" strokeWidth="1.2" fill="none"/><rect x="10" y="32" width="8" height="10" stroke="#b8922a" strokeWidth="1" fill="none"/><rect x="26" y="32" width="8" height="10" stroke="#b8922a" strokeWidth="1" fill="none"/><rect x="16" y="12" width="12" height="10" stroke="rgba(184,146,42,0.5)" strokeWidth="0.8" fill="rgba(184,146,42,0.04)"/><line x1="4" y1="42" x2="40" y2="42" stroke="rgba(184,146,42,0.3)" strokeWidth="0.75"/></svg>,
   },
   {
@@ -31,7 +31,7 @@ const services = [
     subtitle: 'Restoring Dignity to Weathered Memorials',
     desc: 'Professional restoration of existing mausoleums, tombstones, and granite memorials. We bring weathered, damaged, or neglected monuments back to their original beauty — honoring the past.',
     steps: ['Structural damage assessment', 'Deep cleaning & treatment', 'Crack repair & repointing', 'Surface polishing & sealing', 'Final documentation & photos'],
-    img: '/product9.png',
+    img: '/Estates/Blake-Mausoleum.jpg',
     svg: <svg width="44" height="44" viewBox="0 0 44 44" fill="none"><path d="M22 5L4 16V40H40V16L22 5Z" stroke="#b8922a" strokeWidth="1.2" fill="none"/><rect x="15" y="26" width="14" height="14" stroke="#b8922a" strokeWidth="1" fill="none"/><path d="M15 26C15 19 29 19 29 26" stroke="#b8922a" strokeWidth="1" fill="none"/><circle cx="22" cy="5" r="2.5" fill="#b8922a"/><path d="M30 12L36 18" stroke="#b8922a" strokeWidth="1.2" strokeLinecap="round"/><path d="M30 18L36 12" stroke="#b8922a" strokeWidth="1.2" strokeLinecap="round"/></svg>,
   },
 ];
@@ -42,7 +42,7 @@ export default function ServicesPage() {
       {/* Hero */}
       <section style={{ position: 'relative', height: '360px', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <Image
-          src="https://images.unsplash.com/photo-1694891443828-81612669f87a?q=80&auto=format&fit=crop"
+          src="/Estates/Elite_WalkIn_Gallery.jpg"
           alt="Our services" fill style={{ objectFit: 'cover', objectPosition: 'center 30%' }} quality={85}
         />
         <div style={{ position: 'absolute', inset: 0, background: 'rgba(10,8,5,0.62)' }}/>

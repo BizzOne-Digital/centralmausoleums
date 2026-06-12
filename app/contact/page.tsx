@@ -23,7 +23,7 @@ export default function ContactPage() {
     <div style={{ background: '#faf8f4', paddingTop: '80px' }}>
       {/* Hero */}
       <section style={{ position: 'relative', height: '320px', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <Image src="https://images.unsplash.com/photo-1694891443828-81612669f87a?q=80&auto=format&fit=crop" alt="Contact" fill style={{ objectFit: 'cover', objectPosition: 'center 60%' }} quality={85}/>
+        <Image src="/Estates/Elite_WalkIn_Gallery.jpg" alt="Contact" fill style={{ objectFit: 'cover', objectPosition: 'center 60%' }} quality={85}/>
         <div style={{ position: 'absolute', inset: 0, background: 'rgba(10,8,5,0.62)' }}/>
         <div style={{ position: 'relative', zIndex: 1, textAlign: 'center', padding: '0 24px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '14px', justifyContent: 'center', marginBottom: '18px' }}>

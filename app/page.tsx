@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 const HERO_IMG    = '/hero-bg.png';
-const ABOUT_IMG   = 'https://images.unsplash.com/photo-1694891443828-81612669f87a?q=80&auto=format&fit=crop';
+const ABOUT_IMG   = '/Estates/Tribute_WalkIn_Gallery.jpg';
 const FEATURE_IMG = '/whyus.png';
 
 const stats = [
@@ -13,12 +13,28 @@ const stats = [
 ];
 
 const products = [
-  { name: 'Single Mausoleum', img: 'https://images.unsplash.com/photo-1601039448869-e51a7882193b?q=80&auto=format&fit=crop', tag: 'Most Popular' },
-  { name: 'Double Mausoleum', img: 'https://images.unsplash.com/photo-1752509323259-5893ffef66df?q=80&auto=format&fit=crop', tag: 'Family' },
-  { name: 'Columbarium', img: 'https://images.unsplash.com/photo-1627581255137-414e74b6a326?q=80&auto=format&fit=crop', tag: 'Cremation' },
-  { name: 'Cremation Bench', img: 'https://images.unsplash.com/photo-1644697701010-e17ae80d9d92?q=80&w=1742&auto=format&fit=crop', tag: 'Memorial' },
-  { name: 'Estate Mausoleum', img: 'https://images.unsplash.com/photo-1734816831849-dce37f166f77?q=80&auto=format&fit=crop', tag: 'Grand' },
-  { name: 'Cemetery Restoration', img: 'https://images.unsplash.com/photo-1590239549758-4c4bcc36971c?q=80&auto=format&fit=crop', tag: 'Service' },
+  { name: 'Single Mausoleum', img: '/Double Mausoleums/bailey-mausoleum_orig.jpg', tag: 'Most Popular' },
+  { name: 'Double Mausoleum', img: '/Double Mausoleums/DOUBLE-CRYPT-STERWALD-WITH-PLAIN-COLUMNS-1024x738.jpg', tag: 'Family' },
+  { name: 'Columbarium', img: '/Community Columberian/SD-756_Edit_Gallery.jpg', tag: 'Cremation' },
+  { name: 'Cremation Bench', img: '/Cremation Benches/SD-004_FINAL_Gallery__1_-removebg-preview.png', tag: 'Memorial' },
+  { name: 'Estate Mausoleum', img: '/Estates/Tribute_WalkIn_Gallery.jpg', tag: 'Grand' },
+  { name: 'Cemetery Restoration', img: '/Estates/Blake-Mausoleum.jpg', tag: 'Service' },
+];
+
+/* ── Gallery grid: pulled from every client folder ── */
+const galleryItems = [
+  { img: '/Estates/Sovereign_WalkIn_Gallery.jpg',               label: 'Walk-In Estate' },
+  { img: '/Double Mausoleums/DOUBLE-CRYPT-STERWALD-WITH-PLAIN-COLUMNS-1024x738.jpg', label: 'Double Mausoleum' },
+  { img: '/Community Columberian/SD-792_Trellis_Gallery.jpg',   label: 'Community Columbarium' },
+  { img: '/Cremation Benches/SD-003_Setup_E_Gallery__1_-removebg-preview.png', label: 'Cremation Bench' },
+  { img: '/Estates/Elite_WalkIn_Gallery.jpg',                   label: 'Estate Mausoleum' },
+  { img: '/Family And Companion Columberia/sd-702_final.png',   label: 'Family Columbarium' },
+  { img: '/Four Mausoleum/Parker_WalkUp_Gallery.jpg',           label: 'Four Crypt Mausoleum' },
+  { img: '/Double Mausoleums/WLS-208HR-India-Dakota.jpg',       label: 'Custom Granite' },
+  { img: '/Community Columberian/SD-784_Render_Gallery.jpg',    label: 'Columbarium Render' },
+  { img: '/Estates/Birthright_WalkIn_Gallery.jpg',              label: 'Birthright Estate' },
+  { img: '/Cremation Benches/SD-005C_FINAL_Gallery-removebg-preview.png', label: 'Memorial Bench' },
+  { img: '/Family And Companion Columberia/cremation_jpgs8.jpg',label: 'Companion Columbarium' },
 ];
 
 const features = [
@@ -285,6 +301,105 @@ export default function HomePage() {
 
           <div style={{ textAlign: 'center', marginTop: '48px' }}>
             <Link href="/products" className="btn-dark">View All Products & Services</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── PORTFOLIO GALLERY ── */}
+      <section style={{ padding: 'clamp(60px,8vw,96px) clamp(20px,5vw,56px)', background: '#2c2820' }}>
+        <style>{`
+          .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+          }
+          .gallery-grid .tall { grid-row: span 2; }
+          .gallery-item {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            background: #1a1710;
+          }
+          .gallery-item img {
+            transition: transform 0.6s ease !important;
+          }
+          .gallery-item:hover img {
+            transform: scale(1.06) !important;
+          }
+          .gallery-item .g-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(10,8,5,0.75) 0%, transparent 55%);
+            opacity: 0;
+            transition: opacity 0.35s;
+          }
+          .gallery-item:hover .g-overlay { opacity: 1; }
+          .gallery-item .g-label {
+            position: absolute;
+            bottom: 16px;
+            left: 16px;
+            font-family: 'Cinzel', serif;
+            font-size: 0.6rem;
+            letter-spacing: 0.18em;
+            color: #d4aa4a;
+            text-transform: uppercase;
+            opacity: 0;
+            transform: translateY(6px);
+            transition: all 0.35s;
+          }
+          .gallery-item:hover .g-label {
+            opacity: 1;
+            transform: translateY(0);
+          }
+          @media (max-width: 900px) {
+            .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+            .gallery-grid .tall { grid-row: span 1; }
+          }
+          @media (max-width: 600px) {
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+          }
+        `}</style>
+
+        <div style={{ maxWidth: '1300px', margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '52px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '14px', justifyContent: 'center', marginBottom: '18px' }}>
+              <div style={{ width: '40px', height: '1px', background: 'rgba(184,146,42,0.5)' }}/>
+              <span style={{ fontFamily: 'Cinzel, serif', fontSize: '0.58rem', letterSpacing: '0.4em', color: '#d4aa4a' }}>PORTFOLIO</span>
+              <div style={{ width: '40px', height: '1px', background: 'rgba(184,146,42,0.5)' }}/>
+            </div>
+            <h2 style={{ fontFamily: 'Cinzel, serif', fontSize: 'clamp(1.5rem,3vw,2.3rem)', color: '#faf8f4', letterSpacing: '0.04em', marginBottom: '12px' }}>
+              Our Work Speaks for Itself
+            </h2>
+            <p style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1rem,2vw,1.15rem)', color: '#7a7268', maxWidth: '460px', margin: '0 auto' }}>
+              Every structure you see below was designed, fabricated, and installed by our team — no two alike.
+            </p>
+          </div>
+
+          <div className="gallery-grid">
+            {galleryItems.map((g, i) => (
+              <div
+                key={i}
+                className={`gallery-item${i === 0 || i === 4 ? ' tall' : ''}`}
+                style={{ height: i === 0 || i === 4 ? 'auto' : '220px' }}
+              >
+                <div style={{ position: 'relative', width: '100%', height: i === 0 || i === 4 ? '452px' : '220px' }}>
+                  <Image
+                    src={g.img}
+                    alt={g.label}
+                    fill
+                    style={{ objectFit: 'cover' }}
+                    quality={80}
+                    sizes="(max-width:600px) 50vw, (max-width:900px) 33vw, 25vw"
+                  />
+                </div>
+                <div className="g-overlay"/>
+                <div className="g-label">{g.label}</div>
+              </div>
+            ))}
+          </div>
+
+          <div style={{ textAlign: 'center', marginTop: '44px' }}>
+            <Link href="/products" className="btn-gold">View Full Collection</Link>
           </div>
         </div>
       </section>

@@ -32,7 +32,7 @@ export default function AboutPage() {
       {/* Hero */}
       <section style={{ position: 'relative', height: '380px', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <Image
-          src="https://images.unsplash.com/photo-1694891443828-81612669f87a?q=80&auto=format&fit=crop"
+          src="/Estates/Sovereign_WalkIn_Gallery.jpg"
           alt="About Central Mausoleums" fill style={{ objectFit: 'cover', objectPosition: 'center 35%' }} quality={85}
         />
         <div style={{ position: 'absolute', inset: 0, background: 'rgba(10,8,5,0.60)' }}/>
@@ -115,7 +115,90 @@ export default function AboutPage() {
         </div>
       </section>
 
-      
+      {/* ── WORK SHOWCASE — image mosaic from all client folders ── */}
+      <section style={{ background: '#2c2820', padding: 'clamp(60px,8vw,96px) clamp(20px,5vw,56px)' }}>
+        <style>{`
+          .about-mosaic {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: 260px 260px;
+            gap: 6px;
+            max-width: 1300px;
+            margin: 0 auto;
+          }
+          .mosaic-wide { grid-column: span 2; }
+          .mosaic-tall { grid-row: span 2; }
+          .mosaic-item {
+            position: relative;
+            overflow: hidden;
+            background: #1a1710;
+          }
+          .mosaic-item img { transition: transform 0.55s ease !important; }
+          .mosaic-item:hover img { transform: scale(1.07) !important; }
+          @media (max-width: 960px) {
+            .about-mosaic {
+              grid-template-columns: repeat(3, 1fr) !important;
+              grid-template-rows: auto !important;
+            }
+            .mosaic-wide { grid-column: span 1 !important; }
+            .mosaic-tall { grid-row: span 1 !important; }
+            .mosaic-item { height: 200px !important; }
+          }
+          @media (max-width: 560px) {
+            .about-mosaic { grid-template-columns: repeat(2, 1fr) !important; }
+            .mosaic-item { height: 160px !important; }
+          }
+        `}</style>
+
+        <div style={{ maxWidth: '1300px', margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '14px', justifyContent: 'center', marginBottom: '16px' }}>
+              <div style={{ width: '40px', height: '1px', background: 'rgba(184,146,42,0.4)' }}/>
+              <span style={{ fontFamily: 'Cinzel, serif', fontSize: '0.58rem', letterSpacing: '0.4em', color: '#d4aa4a' }}>OUR WORK</span>
+              <div style={{ width: '40px', height: '1px', background: 'rgba(184,146,42,0.4)' }}/>
+            </div>
+            <h2 style={{ fontFamily: 'Cinzel, serif', fontSize: 'clamp(1.5rem,3vw,2.2rem)', color: '#faf8f4', letterSpacing: '0.04em' }}>
+              Built with Pride. Standing for Eternity.
+            </h2>
+            <p style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1rem,2vw,1.1rem)', color: '#7a7268', marginTop: '10px' }}>
+              A glimpse of the structures we have crafted for families across the country.
+            </p>
+          </div>
+
+          <div className="about-mosaic">
+            {/* Row 1 */}
+            <div className="mosaic-item mosaic-wide">
+              <Image src="/Estates/Tribute_WalkIn_Gallery.jpg" alt="Estate mausoleum" fill style={{ objectFit: 'cover' }} quality={80} sizes="40vw"/>
+            </div>
+            <div className="mosaic-item">
+              <Image src="/Double Mausoleums/DOUBLE-CRYPT-STERWALD-WITH-PLAIN-COLUMNS-1024x738.jpg" alt="Double mausoleum" fill style={{ objectFit: 'cover' }} quality={80} sizes="20vw"/>
+            </div>
+            <div className="mosaic-item mosaic-tall">
+              <Image src="/Community Columberian/SD-792_Trellis_Gallery.jpg" alt="Community columbarium" fill style={{ objectFit: 'cover' }} quality={80} sizes="20vw"/>
+            </div>
+            <div className="mosaic-item">
+              <Image src="/Family And Companion Columberia/sd-701_final.png" alt="Family columbarium" fill style={{ objectFit: 'cover' }} quality={80} sizes="20vw"/>
+            </div>
+            {/* Row 2 */}
+            <div className="mosaic-item">
+              <Image src="/Cremation Benches/SD-032_FINAL_George_Gallery-removebg-preview.png" alt="Cremation bench" fill style={{ objectFit: 'cover' }} quality={80} sizes="20vw"/>
+            </div>
+            <div className="mosaic-item mosaic-wide">
+              <Image src="/Estates/Birthright_WalkIn_Gallery.jpg" alt="Birthright estate" fill style={{ objectFit: 'cover' }} quality={80} sizes="40vw"/>
+            </div>
+            <div className="mosaic-item">
+              <Image src="/Four Mausoleum/Parker_WalkUp_Gallery.jpg" alt="Four crypt mausoleum" fill style={{ objectFit: 'cover' }} quality={80} sizes="20vw"/>
+            </div>
+            <div className="mosaic-item">
+              <Image src="/Family And Companion Columberia/cremation_jpgs8.jpg" alt="Companion columbarium" fill style={{ objectFit: 'cover' }} quality={80} sizes="20vw"/>
+            </div>
+          </div>
+
+          <div style={{ textAlign: 'center', marginTop: '40px' }}>
+            <Link href="/products" className="btn-gold">View All Products</Link>
+          </div>
+        </div>
+      </section>
 
       {/* CTA */}
       <section style={{ background: '#2c2820', padding: '72px 56px', textAlign: 'center' }}>
