@@ -13,6 +13,13 @@ export default function Footer() {
           gap: 40px;
           margin-bottom: 48px;
         }
+        .footer-bottom {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 12px;
+        }
         @media (max-width: 768px) {
           .footer-grid {
             grid-template-columns: 1fr !important;
@@ -31,7 +38,10 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div style={{ marginBottom: '18px' }}>
-              <Image src="/logo.png" alt="Central Mausoleums & Granite" width={140} height={65}
+              <Image
+                src="/logo.png"
+                alt="Central Mausoleums & Granite"
+                width={140} height={65}
                 style={{ objectFit: 'contain', height: 'auto', filter: 'brightness(0.92)' }}
               />
             </div>
@@ -40,10 +50,17 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Navigation */}
+          {/* Navigation — includes Gallery */}
           <div>
             <h4 style={{ fontFamily: 'Cinzel, serif', fontSize: '0.65rem', letterSpacing: '0.22em', color: '#b8922a', marginBottom: '20px' }}>NAVIGATION</h4>
-            {[['/', 'Home'], ['/about', 'About Us'], ['/products', 'Products'], ['/services', 'Services'], ['/contact', 'Contact']].map(([href, label]) => (
+            {[
+              ['/', 'Home'],
+              ['/about', 'About Us'],
+              ['/products', 'Products'],
+              ['/services', 'Services'],
+              ['/gallery', 'Gallery'],
+              ['/contact', 'Contact'],
+            ].map(([href, label]) => (
               <Link key={href} href={href} className="footer-link">{label}</Link>
             ))}
           </div>
@@ -51,7 +68,14 @@ export default function Footer() {
           {/* Products */}
           <div>
             <h4 style={{ fontFamily: 'Cinzel, serif', fontSize: '0.65rem', letterSpacing: '0.22em', color: '#b8922a', marginBottom: '20px' }}>PRODUCTS</h4>
-            {['Single Mausoleum', 'Double Mausoleum', 'Four Crypt', 'Six Crypt', 'Columbarium', 'Cremation Benches'].map(item => (
+            {[
+              'Single Mausoleum',
+              'Double Mausoleum',
+              'Four Crypt',
+              'Six Crypt',
+              'Columbarium',
+              'Cremation Benches',
+            ].map(item => (
               <Link key={item} href="/products" className="footer-link">{item}</Link>
             ))}
           </div>
@@ -78,11 +102,15 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="footer-bottom" style={{ borderTop: '1px solid rgba(255,255,255,0.07)', paddingTop: '24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
-          <p style={{ color: '#4a4540', fontSize: '0.78rem' }}>© {new Date().getFullYear()} Central Mausoleums & Granite. All rights reserved.</p>
+        <div className="footer-bottom" style={{ borderTop: '1px solid rgba(255,255,255,0.07)', paddingTop: '24px' }}>
+          <p style={{ color: '#4a4540', fontSize: '0.78rem' }}>
+            © {new Date().getFullYear()} Central Mausoleums & Granite. All rights reserved.
+          </p>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
             <div style={{ width: '28px', height: '1px', background: 'rgba(184,146,42,0.3)' }}/>
-            <svg width="12" height="12" viewBox="0 0 20 20" fill="none"><path d="M10 2L2 7V18H18V7L10 2Z" stroke="rgba(184,146,42,0.4)" strokeWidth="1" fill="none"/></svg>
+            <svg width="12" height="12" viewBox="0 0 20 20" fill="none">
+              <path d="M10 2L2 7V18H18V7L10 2Z" stroke="rgba(184,146,42,0.4)" strokeWidth="1" fill="none"/>
+            </svg>
             <div style={{ width: '28px', height: '1px', background: 'rgba(184,146,42,0.3)' }}/>
           </div>
         </div>
