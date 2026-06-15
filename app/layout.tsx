@@ -6,7 +6,13 @@ import Footer from "./components/Footer";
 export const metadata: Metadata = {
   title: "Central Mausoleums & Granite | Premium Memorial Structures",
   description: "Crafting timeless mausoleums, columbariums, and granite memorials. Single, Double, Four & Six Crypt, Cremation Benches, Cemetery Restoration.",
+   icons: {
+    icon: "/fav.png",
+    shortcut: "/fav.png",
+    apple: "/fav.png",
+  },
 };
+
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
